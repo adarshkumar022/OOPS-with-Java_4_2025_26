@@ -1,0 +1,47 @@
+class Shape {
+    void area() {
+        System.out.println("Area calculation for shape");
+    }
+}
+class Circle extends Shape {
+    double radius;
+
+    // Constructor
+    Circle(double r) {
+        radius = r;
+    }
+    @Override
+    void area() {
+        double result = Math.PI * radius * radius;
+        System.out.println("Area of Circle: " + result);
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+    Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    }
+
+    @Override
+    void area() {
+        double result = length * width;
+        System.out.println("Area of Rectangle: " + result);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects
+        Shape s;
+
+        // Circle object
+        s = new Circle(5);
+        s.area();
+
+        // Rectangle object
+        s = new Rectangle(4, 6);
+        s.area();
+    }
+}
